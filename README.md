@@ -7,8 +7,8 @@ ReactJS (Frontend)
 
 ## Usage
 1. Start the FastAPI server on any machine with public ip
-2. Open the static input html for input
-3. Open the static output html for output
+2. Open the input web page for input
+3. Open the output web page for output
 
 Note:
 - Output update when pressing enter when input
