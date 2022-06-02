@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -15,8 +14,10 @@ function App() {
 
     websocket.onmessage = (e) => {
       const msg = JSON.parse(e.data)
-      if (msg.type === 'sync_text')
+      if (msg.type === 'sync_text') {
+        setCurrentText(msg.data.current_text)
         setDisplayText(msg.data.text)
+      }
       else if (msg.type === 'setting') {
         console.log(msg.data.fontSize)
         setFontSize(msg.data.fontSize)
@@ -65,7 +66,8 @@ function App() {
             if (ws) ws.send(JSON.stringify({
               type: "sync_text",
               data: {
-                text: lastRow
+                text: lastRow,
+                current_text: currentText
               }
             }))
           }
