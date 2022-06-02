@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 fastapi/fastapi
+fastapi/__pycache__
+
